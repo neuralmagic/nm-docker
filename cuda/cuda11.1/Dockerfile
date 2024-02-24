@@ -14,8 +14,8 @@ RUN set -Eeuxo \
         git-all \
     && add-apt-repository -y ppa:deadsnakes \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        python3-pip build-essential libssl-dev libffi-dev \
+        build-essential libssl-dev libffi-dev \
         ffmpeg libsm6 libxext6 \
-        curl
+        curl 
 
 CMD bash 
