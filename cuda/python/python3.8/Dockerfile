@@ -1,4 +1,6 @@
-FROM ghcr.io/neuralmagic/base-cuda11.1:latest
+ARG CUDA_VERSION=11.3.1
+
+FROM ghcr.io/neuralmagic/base-cuda${CUDA_VERSION}:latest
 
 RUN set -Eeuxo \
     && apt-get update \
@@ -9,6 +11,5 @@ RUN set -Eeuxo \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-HEALTHCHECK CMD python3.8 --version
-HEALTHCHECK CMD python3.8 -m pip --help
+HEALTHCHECK CMD python3.8 --version && CMD python3.8 -m pip --help
 CMD bash
