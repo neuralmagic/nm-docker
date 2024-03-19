@@ -1,4 +1,4 @@
-ARG CUDA_VERSION=11.3.1
+ARG CUDA_VERSION=12.1.0
 
 FROM ghcr.io/neuralmagic/base-cuda${CUDA_VERSION}:latest
 
